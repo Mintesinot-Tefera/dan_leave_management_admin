@@ -133,9 +133,33 @@
         if (loadingIndicator) {
           loadingIndicator.remove();
         }
-      }, 10000)
+      }, 10)
     }
   </script>
+
+<!-- <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script> -->
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyB90T-3CMT_fcMcA3yMOgumAvo_u1ODfhY",
+    authDomain: "danattendancemanagement-805e7.firebaseapp.com",
+    projectId: "danattendancemanagement-805e7",
+    storageBucket: "danattendancemanagement-805e7.appspot.com",
+    messagingSenderId: "714977608761",
+    appId: "1:714977608761:web:44ef5c0e0b9d3d078279e8"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
 </body>
 
 </html>

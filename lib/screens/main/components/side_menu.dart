@@ -1,5 +1,9 @@
+import 'package:admin/controllers/MenuController.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
+
+import '../../../controllers/RequestController.dart';
 
 class SideMenu extends StatelessWidget {
   const SideMenu({
@@ -12,31 +16,50 @@ class SideMenu extends StatelessWidget {
       child: ListView(
         children: [
           DrawerHeader(
-            child: Image.asset("assets/images/logo.png"),
+            child: Image.asset("assets/images/logo_dan.png"),
           ),
           DrawerListTile(
             title: "Dashboard",
             svgSrc: "assets/icons/menu_dashbord.svg",
-            press: () {},
+            press: () {
+              Provider.of<MenuController>(context, listen: false)
+                  .changeCurrentScreen(CustomScreensEnum.dashboardScreen);
+            },
           ),
           DrawerListTile(
-            title: "Transaction",
-            svgSrc: "assets/icons/menu_tran.svg",
-            press: () {},
+            title: "Pending Requests",
+            svgSrc: "assets/icons/menu_doc.svg",
+            press: () {
+              Provider.of<RequestController>(context, listen: false)
+                  .unselectrequest();
+
+              Provider.of<MenuController>(context, listen: false)
+                  .changeCurrentScreen(CustomScreensEnum.pendingRequestScreen);
+              // Navigator.of(context).push(
+              //     MaterialPageRoute(builder: (context) => PendingRequest2()));
+            },
           ),
           DrawerListTile(
-            title: "Task",
-            svgSrc: "assets/icons/menu_task.svg",
-            press: () {},
+            title: "Approved Requests",
+            svgSrc: "assets/icons/menu_doc.svg",
+            press: () {
+              Provider.of<RequestController>(context, listen: false)
+                  .unselectrequest();
+              Provider.of<MenuController>(context, listen: false)
+                  .changeCurrentScreen(CustomScreensEnum.approvedRequestScreen);
+            },
+          ),
+          DrawerListTile(
+            title: "Declined Requests",
+            svgSrc: "assets/icons/menu_doc.svg",
+            press: () {
+              Provider.of<MenuController>(context, listen: false)
+                  .changeCurrentScreen(CustomScreensEnum.declinedRequestScreen);
+            },
           ),
           DrawerListTile(
             title: "Documents",
             svgSrc: "assets/icons/menu_doc.svg",
-            press: () {},
-          ),
-          DrawerListTile(
-            title: "Store",
-            svgSrc: "assets/icons/menu_store.svg",
             press: () {},
           ),
           DrawerListTile(

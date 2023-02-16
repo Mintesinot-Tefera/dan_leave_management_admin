@@ -1,9 +1,7 @@
 import 'package:admin/controllers/MenuController.dart';
 import 'package:admin/responsive.dart';
-import 'package:admin/screens/dashboard/dashboard_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import 'components/side_menu.dart';
 
 class MainScreen extends StatelessWidget {
@@ -26,7 +24,8 @@ class MainScreen extends StatelessWidget {
             Expanded(
               // It takes 5/6 part of the screen
               flex: 5,
-              child: DashboardScreen(),
+              child: context.watch<MenuController>().currentScreen,
+              // DashboardScreen(),
             ),
           ],
         ),

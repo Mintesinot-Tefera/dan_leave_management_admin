@@ -27,7 +27,7 @@ class Header extends StatelessWidget {
           ),
         if (!Responsive.isMobile(context))
           Spacer(flex: Responsive.isDesktop(context) ? 2 : 1),
-        Expanded(child: SearchField()),
+        // Expanded(child: SearchField()),
         ProfileCard()
       ],
     );
@@ -62,7 +62,7 @@ class ProfileCard extends StatelessWidget {
             Padding(
               padding:
                   const EdgeInsets.symmetric(horizontal: defaultPadding / 2),
-              child: Text("Angelina Jolie"),
+              child: Text("Solomon Gizaw"),
             ),
           Icon(Icons.keyboard_arrow_down),
         ],
